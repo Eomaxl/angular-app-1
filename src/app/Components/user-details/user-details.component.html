@@ -1,4 +1,6 @@
  <div class="container">
-        <h1 class="display-4">{{user}} </h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1 class="display-4"> {{user.name}}  </h1>
+        <p class="lead">{{ user.email}}</p>
+        <p class="lead">Address: {{ user.address.street}},{{ user.address.suite}} ,{{ user.address.city}} ,{{ user.address.zipcode}}  </p>
+        <p class="lead">Phone : {{ user.phone}}</p>
 </div>

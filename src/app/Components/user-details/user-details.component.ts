@@ -7,7 +7,7 @@ import {  ActivatedRoute} from '@angular/router';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-
+  user: any;
     
   users:Array<{id:number,name:string,username:string,email:string,address:any,phone:string,website:string,company:any}> =
   [
@@ -244,12 +244,15 @@ export class UserDetailsComponent implements OnInit {
 ]
 
   constructor( private activatedRoute: ActivatedRoute) { 
-    this.activatedRoute.params.subscribe((params)=>{
-      console.log(params);
-    })
   }
 
   ngOnInit() {
+    console.log(this.users[1]);
+    this.activatedRoute.params.subscribe((params)=>{
+     this.user=  this.users.filter((user)=> {
+       return user.id === +params.id})[0];
+     console.log(this.user);
+    })
   }
 
 }
