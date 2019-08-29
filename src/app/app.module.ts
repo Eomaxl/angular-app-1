@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AuthGuard } from './guards/auth.guard';
 import { HelloComponent } from './hello.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AboutComponent } from './Components/about/about.component';
@@ -21,10 +22,11 @@ import { PlaceHolderComponent } from './Components/place-holder/place-holder.com
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
-  { path:'about', component:AboutComponent},
-  { path:'blogview', component:BlogViewComponent , children:[
+  { path:'about', component:AboutComponent, canActivate: [ AuthGuard]},
+  { path:'blogview', component:BlogViewComponent ,
+    canActivateChild:[AuthGuard], children:[
     {path:':id',component:UserDetailsComponent},
-    {path:'',component:PlaceHolderComponent}
+    // {path:'',component:PlaceHolderComponent}
   ]},
   { path:'directive', component:DirectiveHostComponent},
   { path:'parent', component:ParentComponent},
@@ -35,6 +37,7 @@ const appRouting:Routes = [
 
 
 @NgModule({
+  providers: [ AuthGuard ],
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent ],
   bootstrap:    [ AppComponent ]
