@@ -1,12 +1,15 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2,Input } from '@angular/core';
 
 @Directive({
   selector: '[appChangeCase]'
 })
 export class ChangeCaseDirective {
 
+  @Input() case:string;
+
   @HostListener('blur') onBlur () {
-   let changedValue:string= this.elRef.nativeElement.value.toUpperCase();
+   let changedValue:string=   this.case ==='upper' ? this.elRef.nativeElement.value.toUpperCase():
+                                                      this.elRef.nativeElement.value.toLowerCase() ;
    this.renderer.setProperty(this.elRef.nativeElement, 'value', changedValue);
   }
 

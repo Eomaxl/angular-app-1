@@ -11,6 +11,7 @@ import { BlogViewComponent } from './Components/blog-view/blog-view.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { ChangeCaseDirective } from './directives/change-case.directive';
 import { DirectiveHostComponent } from './Components/directive-host/directive-host.component';
+import { UnlessDirective } from './directives/unless.directive';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
@@ -24,7 +25,7 @@ const appRouting:Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
