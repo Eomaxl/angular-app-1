@@ -2,10 +2,15 @@
 directive-host works!
 </p>
 <input type='text' value='Enter the text' appChangeCase [case]="'upper'">
-<div *ngIf='showUnless'>
+<!-- <div *ngIf='showUnless'>
     <p> Text is getting displayed </p>
-</div>
+</div> -->
 
-<ng-template [ngIf]='showUnless'>
+<!-- <ng-template [ngIf]='showUnless'>
+  <p> This one also getting displayed</p>
+</ng-template> -->
+
+
+<ng-template [appUnless]='false'>
   <p> This one also getting displayed</p>
 </ng-template>

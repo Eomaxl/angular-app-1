@@ -1,0 +1,11 @@
+<h1>
+Pipes
+</h1>
+
+<ul class="list-group">
+  <li class="list-group-item">Date without pipe : {{dateToday}} </li>
+  <li class="list-group-item"> Date with pipe: {{ dateToday | date }} </li>
+  <li class="list-group-item"> Date with pipe and params : {{ dateToday | date: 'full' | uppercase }} </li>
+   <li class="list-group-item"> Date with pipe and params : {{ dateToday | date: 'shortDate'  }} </li>
+</ul>
+
