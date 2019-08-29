@@ -6,7 +6,8 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 export class ChangeCaseDirective {
 
   @HostListener('blur') onBlur () {
-    this.elRef.nativeElement.value = this.elRef.nativeElement.value.toUpperCase();
+   let changedValue:string= this.elRef.nativeElement.value.toUpperCase();
+   this.renderer.setProperty(this.elRef.nativeElement, 'value', changedValue);
   }
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) { 
