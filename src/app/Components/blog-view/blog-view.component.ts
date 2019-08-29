@@ -12,4 +12,6 @@ export class BlogViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+
 }

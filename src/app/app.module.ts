@@ -14,11 +14,18 @@ import { DirectiveHostComponent } from './Components/directive-host/directive-ho
 import { UnlessDirective } from './directives/unless.directive';
 import { ParentComponent } from './Components/parent/parent.component';
 import { AppenderPipe } from './pipes/appender.pipe';
+import { UserListComponent } from './Components/user-list/user-list.component';
+import { UserDetailsComponent } from './Components/user-details/user-details.component';
+import { UserComponent } from './Components/user/user.component';
+import { PlaceHolderComponent } from './Components/place-holder/place-holder.component';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
   { path:'about', component:AboutComponent},
-  { path:'blogview', component:BlogViewComponent},
+  { path:'blogview', component:BlogViewComponent , children:[
+    {path:':id',component:UserDetailsComponent},
+    {path:'',component:PlaceHolderComponent}
+  ]},
   { path:'directive', component:DirectiveHostComponent},
   { path:'parent', component:ParentComponent},
   { path:'',redirectTo:'/home',pathMatch:'full'},
@@ -29,7 +36,7 @@ const appRouting:Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
