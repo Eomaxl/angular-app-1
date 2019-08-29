@@ -13,6 +13,7 @@ import { ChangeCaseDirective } from './directives/change-case.directive';
 import { DirectiveHostComponent } from './Components/directive-host/directive-host.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { ParentComponent } from './Components/parent/parent.component';
+import { AppenderPipe } from './pipes/appender.pipe';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
@@ -28,7 +29,7 @@ const appRouting:Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
