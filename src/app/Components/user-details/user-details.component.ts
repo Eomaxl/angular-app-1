@@ -22,7 +22,8 @@ export class UserDetailsComponent implements OnInit {
     
     this.activatedRoute.params.subscribe((params)=>{
      this.user=  this._userService.getUserById(+params['id']);
-     console.log(this.user);
+     //this._userService.getUserViaRest(+params['id']).subscribe(user => this.user = user)
+     console.log("User details >>>>>> "+this.user.name);
     })
   }
 
