@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -42,7 +43,7 @@ const appRouting:Routes = [
 
 @NgModule({
   providers: [ AuthGuard, UserService ],
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
+  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) , HttpClientModule ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent ],
   bootstrap:    [ AppComponent ]
 })
