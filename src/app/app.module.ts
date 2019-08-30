@@ -19,6 +19,7 @@ import { UserListComponent } from './Components/user-list/user-list.component';
 import { UserDetailsComponent } from './Components/user-details/user-details.component';
 import { UserComponent } from './Components/user/user.component';
 import { PlaceHolderComponent } from './Components/place-holder/place-holder.component';
+import { UserService } from './services/user.service';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
@@ -40,7 +41,7 @@ const appRouting:Routes = [
 
 
 @NgModule({
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, UserService ],
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent ],
   bootstrap:    [ AppComponent ]
