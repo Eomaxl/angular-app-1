@@ -22,11 +22,14 @@ import { PlaceHolderComponent } from './Components/place-holder/place-holder.com
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
-  { path:'about', component:AboutComponent, canActivate: [ AuthGuard]},
+  { path:'about', component:AboutComponent, 
+  // canActivate: [ AuthGuard]
+  },
   { path:'blogview', component:BlogViewComponent ,
-    canActivateChild:[AuthGuard], children:[
+    // canActivateChild:[AuthGuard],
+     children:[
     {path:':id',component:UserDetailsComponent},
-    // {path:'',component:PlaceHolderComponent}
+     {path:'',component:PlaceHolderComponent}
   ]},
   { path:'directive', component:DirectiveHostComponent},
   { path:'parent', component:ParentComponent},
