@@ -8,8 +8,7 @@ export class UserService {
 
   private _rooturl: string = 'https://jsonplaceholder.typicode.com/users';
 
-  private _users:IUser[] =
-  [
+  private _users:IUser[] = [
   {
     "id": 1,
     "name": "Leanne Graham",
@@ -243,6 +242,8 @@ export class UserService {
 ];
   
   constructor(private http:HttpClient) { }
+
+
   getUsers():IUser[]{
     return this._users;
   }
@@ -257,5 +258,9 @@ export class UserService {
 
   getUserViaRest(id:number): Observable<IUser>{
     return this.http.get<IUser>(`${this._rooturl}/${id}`)
+  }
+
+  addUser(user:IUser){
+    this._users.push(user);
   }
 }

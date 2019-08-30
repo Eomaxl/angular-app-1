@@ -27,4 +27,20 @@ export class UserDetailsComponent implements OnInit {
     })
   }
 
+  createUser(){
+
+  }
+
+  updateUser() {
+
+  }
+
+  deleteUser(){
+
+  }
+
+  getPost(){
+
+  }
+
 }

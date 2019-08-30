@@ -1,0 +1,38 @@
+<div class="container">
+  <h3>New user form</h3>
+  <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input required type="text" name="name" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group"
+      ><label for="username">Username</label>
+      <input type="text" name="username" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group"
+      ><label for="phone">Phone</label>
+      <input type="text" name="phone" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" name="website" class="form-control" ngModel>
+    </div>
+    <hr>
+  <pre>
+        
+  </pre>
+  <hr>
+  <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid" >Submit</button>
+  
+  </form>
+</div>
+ 
+   

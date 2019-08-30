@@ -3,4 +3,12 @@
         <p class="lead">{{ user.email}}</p>
         <p class="lead">Address: {{ user.address.street}},{{ user.address.suite}} ,{{ user.address.city}} ,{{ user.address.zipcode}}  </p>
         <p class="lead">Phone : {{ user.phone}}</p>
+        <div class="row">
+          <div class="col-md-12" >
+            <button class="btn btn-success" (click)='createUser()'>Create User</button>&nbsp;&nbsp;
+            <button class="btn btn-primary" (click)='updateUser()'>Update User</button>&nbsp;&nbsp;
+            <button class="btn btn-danger" (click)='deleteUser()'>Delete User</button>&nbsp;&nbsp;
+            <button class="btn btn-warning" (click)='getPost()'>Get posts by user</button>&nbsp;&nbsp;
+          </div>
+        </div>
 </div>

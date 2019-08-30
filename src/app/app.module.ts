@@ -21,6 +21,7 @@ import { UserDetailsComponent } from './Components/user-details/user-details.com
 import { UserComponent } from './Components/user/user.component';
 import { PlaceHolderComponent } from './Components/place-holder/place-holder.component';
 import { UserService } from './services/user.service';
+import { NewUserComponent } from './Components/new-user/new-user.component';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
@@ -36,7 +37,9 @@ const appRouting:Routes = [
   { path:'directive', component:DirectiveHostComponent},
   { path:'parent', component:ParentComponent},
   { path:'',redirectTo:'/home',pathMatch:'full'},
-  { path:'**',redirectTo:'/home',pathMatch:'full'},
+  { path:'new-user', component:NewUserComponent},
+  { path:'**',redirectTo:'/home',pathMatch:'full'}
+  
   
 ]
 
@@ -44,7 +47,7 @@ const appRouting:Routes = [
 @NgModule({
   providers: [ AuthGuard, UserService ],
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) , HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent, NewUserComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
