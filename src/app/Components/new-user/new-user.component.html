@@ -32,9 +32,71 @@
       <label for="website">Website</label>
       <input type="text" name="website" class="form-control" ngModel>
     </div>
+    <div ngModelGroup="address">
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" name="street" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="suite">Suite</label>
+        <input type="text" name="suite" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" name="city" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zipcode</label>
+        <input type="text" name="zipcode" class="form-control" ngModel>
+      </div>
+      <div ngModelGroup="geo">
+        <div class="form-group">
+        <label for="lat">Latitude</label>
+        <input type="text" name="lat" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="lng">Longitude</label>
+        <input type="text" name="lng" class="form-control" ngModel>
+      </div>
+      </div>
+    
+    </div>
+    <div ngModelGroup="company" >
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="bs">BS</label>
+        <input type="text" name="bs" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="catchPhrase">Catch Phrase</label>
+        <input type="text" name="catchPhrase" class="form-control">
+      </div>
+    </div>
+   <div class="radio">
+     <label for="gender" *ngFor="let gender of genders">
+        <input type="radio" ngModel  [value]='gender' name='gender'> {{ gender }} <br/>
+      </label>
+    </div>
+    <div class="form-group">
+      <label name="communicationMode">Communication Options </label>
+      <select name="communicationMode" class="form-control" ngModel>
+      
+       <option *ngFor="let communication of communicationMode" [value]="communication"> {{communication}}</option>
+      </select>
+    </div>
+
+    <div class="checkbox">
+      <label for="agreement">
+        <input type="checkbox" name="agreement" ngModel> I agree to the Terms and Condition !<br>
+      </label>
+    </div>
+
     <hr>
   <pre>
-        
+        {{ userForm.value | json}}
   </pre>
   <hr>
   <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid" >Submit</button>

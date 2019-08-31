@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  communication: string[];
-  gender: string[];
+  communicationMode: string[];
+  genders: string[];
 
   constructor() { 
-    this.gender = ['Male','Female','Other'];
-    this.communication = []
+    this.genders = ['Male','Female','Other'];
+    this.communicationMode = ['Phone','Email'];
   }
 
   ngOnInit() {
