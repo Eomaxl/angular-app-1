@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +22,7 @@ import { UserComponent } from './Components/user/user.component';
 import { PlaceHolderComponent } from './Components/place-holder/place-holder.component';
 import { UserService } from './services/user.service';
 import { NewUserComponent } from './Components/new-user/new-user.component';
+import { NewUserReactiveComponent } from './Components/new-user-reactive/new-user-reactive.component';
 
 const appRouting:Routes = [
   { path:'home', component:HomeComponent },
@@ -38,6 +39,7 @@ const appRouting:Routes = [
   { path:'parent', component:ParentComponent},
   { path:'',redirectTo:'/home',pathMatch:'full'},
   { path:'new-user', component:NewUserComponent},
+  { path:'reactive-user',component:NewUserReactiveComponent},
   { path:'**',redirectTo:'/home',pathMatch:'full'}
   
   
@@ -46,8 +48,8 @@ const appRouting:Routes = [
 
 @NgModule({
   providers: [ AuthGuard, UserService ],
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) , HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent, NewUserComponent ],
+  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRouting) , HttpClientModule, ReactiveFormsModule ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, BlogViewComponent, HeaderComponent, ChangeCaseDirective, DirectiveHostComponent, UnlessDirective, ParentComponent, AppenderPipe, UserListComponent, UserDetailsComponent, UserComponent, PlaceHolderComponent, NewUserComponent, NewUserReactiveComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

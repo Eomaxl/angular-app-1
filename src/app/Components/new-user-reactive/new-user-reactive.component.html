@@ -1,0 +1,78 @@
+<div class='container'>
+  <h3> Reactive user form</h3>
+  <form [formGroup]="userForm" (ngSubmit)='onSubmit()'>
+   <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <div class="alert alert-danger" *ngIf="userform.get('name').touched && userform.get('name').inavlid">
+        <p> Name is invalid </p>
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+     <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+     <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" formControlName="phone">
+    </div>
+     <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" formControlName="website">
+    </div>
+    <fieldset formGroupName='address'>
+      <legend>Address</legend>
+      <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" formControlName="street">
+    </div>
+     <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" formControlName="city">
+    </div>
+     <div class="form-group">
+      <label for="suite">Suite</label>
+      <input type="text" class="form-control" formControlName="suite">
+    </div>
+     <div class="form-group">
+      <label for="zipcode">Zipcode</label>
+      <input type="text" class="form-control" formControlName="zipcode">
+    </div>
+    <fieldset formGroupName='geo'>
+      <legend>Geo</legend>
+      <div class="form-group">
+      <label for="lat">Latitude</label>
+      <input type="text" class="form-control" formControlName="lat">
+    </div>
+     <div class="form-group">
+      <label for="lng">Longitutde</label>
+      <input type="text" class="form-control" formControlName="lng">
+    </div>
+    </fieldset>
+
+    </fieldset>
+    <fieldset formGroupName='company'>
+      <legend>Company</legend>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="bs">BS</label>
+      <input type="text" class="form-control" formControlName="bs">
+    </div>
+    <div class="form-group">
+      <label for="catchPhrase">Catch Phrase</label>
+      <input type="text" class="form-control" formControlName="catchPhrase">
+    </div> 
+     <button class="btn btn-primary">Submit</button>
+    </fieldset>
+   <fieldset>
+     <legend> Hobbies | <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></legend>
+   </fieldset>
+  </form>
+</div>
